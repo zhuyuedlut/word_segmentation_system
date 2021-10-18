@@ -10,7 +10,7 @@ class TextSplitter(object):
     def split_sentence_for_seq(self, context, max_len=512):
         sentence = []
 
-        for sent in self.re_split_sentence(context):
+        for sent in self.re_split_sentence.split(context):
             if not sent:
                 continue
             for i in range(math.ceil(len(sent) / max_len)):
@@ -24,6 +24,6 @@ if __name__ == '__main__':
     text_splitter = TextSplitter()
     content = '我是谁。我在哪里。你又是谁？119.2 。29,220.20元！你说：”我很好！是吗?”'
     print('split sentence for seg\n')
-    for i, sent in enumerate(text_splitter.split_sentence_for_seg(content)):
+    for i, sent in enumerate(text_splitter.split_sentence_for_seq(content)):
         print('sent:{} {}'.format(i, sent))
     print('\n')

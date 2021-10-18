@@ -1,5 +1,5 @@
 class Node(object):
-    def __int__(self, key, weight, source=None, freq=None):
+    def __init__(self, key, weight, source=None, freq=None):
         self.key = key
         self.weight = weight
         self.source = source

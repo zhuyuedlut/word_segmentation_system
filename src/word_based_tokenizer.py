@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
     content = '今天天气不错，祝你马到成功'
     words = []
-    for sent in text_splitter.split_sentence_for_seg(content):
+    for sent in text_splitter.split_sentence_for_seq(content):
         if sent in text_splitter.stops[2:-2]:  # 分隔符，直接添加到words，无需构建词图
             words.append(sent)
             continue
